@@ -21,18 +21,22 @@
 #import "@preview/note-me:0.2.1" as nt
 
 #show: project.with(
-  course: "计算机网络",
+  title: "实验报告",
+  course: "计算机网络实验报告",
   lab_name: "TCP/IP实验",
   stu_name: "丁真",
-  stu_num: "114514",
-  major: "土木工程",
-  department: "火星土木学院",
+  stu_id: "2077114514",
+  class: "E-ciga 77级 114514 班",
+  // major: "软件工程",
+  department: "计算机学院",
   date: (2077, 1, 1),
+  teacher: "2.5 条悟",
+  show_date: false,
   show_content_figure: true,
-  watermark: "NKU",
+  watermark: "USC",
 )
 
-#let mytest = [通过这次实验，我深刻体会到了同态加密技术的强大和实用性，特别是在保护数据隐私的同时执行复杂计算的能力。使用Microsoft SEAL库进行加密计算不仅加深了我对同态加密原理的理解，也提升了我的编程技能和解决实际问题的能力。]
+#let mytest = [通过这次实验，我深刻体会到了同态加密技术的强大和实用性，特别是在保护数据隐私的同时执行复杂计算的能力。使用 Microsoft SEAL 库进行加密计算不仅加深了我对同态加密原理的理解，也提升了我的编程技能和解决实际问题的能力。]
 
 #let mycode = ```cpp
 void MergeSort(int arr[], int left, int right) {
@@ -98,7 +102,7 @@ _这是一个被强调的内容_ \
 == 二级标题
 
 #lorem(20)
-#figure(image("./img/NKU-logo.png", width: 10%), caption: "南开大学校徽")
+// #figure(image("./img/USC-logo.png", width: 10%), caption: "USC logo")
 
 == 测试treet
 
