@@ -9,7 +9,7 @@
 
 
 #let indent() = {
-  box(width: 2em)
+  set par(first-line-indent: 2em)
 }
 
 #let info_key(body) = {
@@ -168,7 +168,7 @@
   show math.equation: i-figured.show-equation
   set text(
     font: Songti,
-    size: 12pt,
+    size: font_size.小四,
   )
   set par(    // 段落设置
     justify: false,
