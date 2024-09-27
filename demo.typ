@@ -31,7 +31,7 @@
   department: "计算机学院",
   date: (2077, 1, 1),
   teacher: "2.5 条悟",
-  show_date: false,
+  show_date: true,
   show_content_figure: true,
   watermark: "USC",
 )

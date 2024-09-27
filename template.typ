@@ -50,9 +50,9 @@
     #set text(font: Heiti, size: 22pt)
 
     #text(font: XK, size: 48pt)[南华大学]
-   
+
     #v(-1em)
-   
+
     #text(font: XK, size: 26pt)[计算机学院]
 
     #v(3em)
@@ -67,7 +67,7 @@
     //   #lab_name
     // ]
 
-    #text(font: ("Times New Roman", "SimSun"), size: 14pt)[（ 2024 ~2025学年 第一学期 ）]
+    #text(font: ("Times New Roman", "SimSun"), size: 20pt)[（ 2024 ~2025学年 第一学期 ）]
 
     // 你 USC 计院实验报告感觉从来不用 logo，需要的自行添加
     // #image("./img/NKU-logo.png", width: 40%)
@@ -86,11 +86,11 @@
       info_key("班　　级"), info_value(class),
       info_key("指导老师"), info_value(teacher),
     )
-    #v(1pt)
+    #v(0.8em)
 
     // 日期
     #if show_date {
-      text(font: Heiti, size: 14pt)[
+      text(font: Heiti, size: 20pt)[
         #date.at(0) 年 #date.at(1) 月 #date.at(2) 日
       ]
     }
@@ -139,6 +139,11 @@
       font: Songti,
       size: 12pt,
     )
+    it
+  }
+
+  show outline: it => {
+    show heading: set align(center)
     it
   }
 
