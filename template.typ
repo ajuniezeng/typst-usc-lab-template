@@ -6,6 +6,7 @@
 #import "@preview/cheq:0.1.0": checklist
 #import "@preview/unify:0.6.0": num, qty, numrange, qtyrange
 #import "fonts.typ": *
+#import "@preview/cuti:0.2.1": *
 
 
 #let indent() = {
@@ -36,12 +37,14 @@
   department: "DEPARTMENT",
   teacher: "2.5 GOJO",
   date: (114, 5, 14),
+  year: 2077,
+  semester: "第一学期",
   show_date: false,
   show_content_figure: false,
   watermark: "",
   body,
 ) = {
-  set page("a4")
+  set page("a4", margin: (x: 7.5em, y: 6em))
   // 封面
   align(center)[
     // 你 USC 计院实验报告千奇百怪，没见过哪一种用图片的，需要的自行添加
@@ -58,7 +61,7 @@
     #v(3em)
     // 课程名
     #text(size: 36pt, font: Heiti)[
-      #course
+      #title
     ]
     #v(1.5em)
 
@@ -67,7 +70,7 @@
     //   #lab_name
     // ]
 
-    #text(font: ("Times New Roman", "SimSun"), size: 20pt)[（ 2024 ~2025学年 第一学期 ）]
+    #text(font: ("Times New Roman", "SimSun"), size: 14pt)[（ #year \~ #{year+1}学年 #semester ）]
 
     // 你 USC 计院实验报告感觉从来不用 logo，需要的自行添加
     // #image("./img/NKU-logo.png", width: 40%)
@@ -130,8 +133,15 @@
 
   // 目录
   show outline.entry.where(level: 1): it => {
-    v(12pt, weak: true)
+    v(22pt, weak: true)
+    show: cn-fakebold
     strong(it)
+  }
+
+  show outline.entry.where(level: 2): it => {
+    v(2pt, weak: true)
+    h(2em)
+    it
   }
 
   show outline.entry: it => {
@@ -148,7 +158,7 @@
   }
 
   outline(
-    title: text(font: Songti, size: 16pt)[目录],
+    title: text(font: Songti, size: 16pt)[目　录],
     indent: auto,
   )
 
@@ -176,14 +186,15 @@
     first-line-indent: 2em,
   )
   show heading: it => box(width: 100%)[ // 标题设置
-    #v(0.45em)
+    #v(0.5em)
     #set text(font: Songti)
+    #show: show-cn-fakebold
     #if it.numbering != none {
       counter(heading).display()
     }
     #h(0.75em)
     #it.body
-    #v(5pt)
+    #v(0.6em)
   ]
   show link: it => {
     // 链接
